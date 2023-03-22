@@ -5,7 +5,7 @@ import Country from "./Country";
 const Body = () => {
   return (
     <div className="bg-light-gray min-h-[90vh] dark:bg-very-dark-blue text-very-dark-blue2">
-      <div className="container mx-auto px-8 py-8">
+      <div className="container mx-auto px-8 py-10">
         <section className="flex flex-col gap-8  md:flex-row md:items-center md:justify-between">
           <div className="bg-white shadow flex px-6 py-4 md:w-1/3 gap-4 rounded-md dark:bg-dark-blue">
             <Search className="text-dark-gray dark:text-white" />
@@ -33,7 +33,7 @@ const Body = () => {
           </div>
         </section>
 
-        <section className="py-8">
+        <section className="py-10 grid gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <Country />
         </section>
       </div>
