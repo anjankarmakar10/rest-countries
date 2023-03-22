@@ -1,8 +1,11 @@
 import React from "react";
 import { Search } from "react-feather";
+import useCountries from "../hooks/useCountries";
 import Country from "./Country";
 
 const Body = () => {
+  const countries = useCountries();
+
   return (
     <div className="bg-light-gray min-h-[90vh] dark:bg-very-dark-blue text-very-dark-blue2">
       <div className="container mx-auto px-8 py-10">
@@ -34,7 +37,11 @@ const Body = () => {
         </section>
 
         <section className="py-10 grid gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <Country />
+          {countries ? (
+            countries.map((country) => <Country country={country} />)
+          ) : (
+            <h1>Loading....</h1>
+          )}
         </section>
       </div>
     </div>
