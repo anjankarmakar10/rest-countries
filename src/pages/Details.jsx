@@ -102,7 +102,7 @@ const Details = () => {
                 <div className="text-very-dark-blue2 dark:text-light-gray flex gap-2 items-center  h-fit">
                   Border Countries:
                   <div className="flex gap-2 flex-wrap">
-                    {country[0]?.borders.map((border) => (
+                    {country[0]?.borders?.map((border) => (
                       <Link
                         to={`/details/${border}`}
                         className="text-dark-blue dark:text-dark-gray  bg-white font-semibold dark:bg-dark-blue shadow-sm rounded-md  cursor-pointer py-1 px-6"
