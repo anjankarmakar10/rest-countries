@@ -3,6 +3,7 @@ import { Search } from "react-feather";
 import useCountries from "../hooks/useCountries";
 import { filter, search } from "../utils/helper";
 import Country from "./Country";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const countries = useCountries();
@@ -75,7 +76,9 @@ const Body = () => {
         <section className="py-8 grid gap-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {filterCounties ? (
             filterCounties.map((country) => (
-              <Country key={+country?.ccn3} country={country} />
+              <Link key={+country?.ccn3} to={`/details/${country?.ccn3}`}>
+                <Country country={country} />
+              </Link>
             ))
           ) : (
             <h1>Loading....</h1>
