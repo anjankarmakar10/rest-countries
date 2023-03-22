@@ -118,7 +118,7 @@ const Details = () => {
         </section>
       ) : (
         <div className=" px-8 pb-4 bg-light-gray min-h-[90vh] dark:bg-very-dark-blue text-very-dark-blue2 dark:text-light-gray">
-          <div className="container mx-auto mt-4">Loading...</div>
+          <div className="container mx-auto pt-4">Loading...</div>
         </div>
       )}
     </div>
