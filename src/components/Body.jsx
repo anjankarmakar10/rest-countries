@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Search } from "react-feather";
 import useCountries from "../hooks/useCountries";
-import { filter } from "../utils/helper";
+import { filter, search } from "../utils/helper";
 import Country from "./Country";
 
 const Body = () => {
@@ -23,19 +23,11 @@ const Body = () => {
   const handleChange = (e) => {
     const value = e.target.value;
     setSearchText(value);
-    console.log(value);
   };
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(searchText);
-    const searched = handleSearch(searchText);
+    const searched = search(countries, searchText);
     setFilterCountries(searched);
-  };
-
-  const handleSearch = (query) => {
-    return countries.filter((country) =>
-      country?.name?.common.toLowerCase().includes(query)
-    );
   };
 
   return (

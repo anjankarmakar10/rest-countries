@@ -4,4 +4,10 @@ const filter = (countries, region) => {
   );
 };
 
-export { filter };
+const search = (countries, query) => {
+  return countries.filter((country) =>
+    country?.name?.common.toLowerCase().includes(query)
+  );
+};
+
+export { filter, search };
